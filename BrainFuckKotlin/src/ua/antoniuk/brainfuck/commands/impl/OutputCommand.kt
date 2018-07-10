@@ -11,7 +11,5 @@ class OutputCommand : BrainFuckCommand {
     /**
      * Method output the byte at the data pointer
      */
-    override fun execute(bfData: BrainFuckData) {
-        print(bfData.memory[bfData.dataPointer].toChar())
-    }
+    override fun execute(bfData: BrainFuckData) = print(bfData.memory[bfData.dataPointer].toChar())
 }

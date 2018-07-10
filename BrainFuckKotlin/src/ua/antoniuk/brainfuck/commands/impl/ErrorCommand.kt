@@ -13,7 +13,5 @@ class ErrorCommand : BrainFuckCommand {
      *
      * @throws IllegalArgumentException
      */
-    override fun execute(bfData: BrainFuckData) {
-        throw IllegalArgumentException("Unsupported command `${bfData.code[bfData.curCommand]}`")
-    }
+    override fun execute(bfData: BrainFuckData) = throw IllegalArgumentException("Unsupported command `${bfData.code[bfData.curCommand]}`")
 }

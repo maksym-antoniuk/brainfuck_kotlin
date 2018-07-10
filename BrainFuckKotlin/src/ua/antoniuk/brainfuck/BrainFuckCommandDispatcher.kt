@@ -13,6 +13,7 @@ import ua.antoniuk.brainfuck.commands.impl.OutputCommand
 import ua.antoniuk.brainfuck.commands.impl.StartLoopCommand
 
 class BrainFuckCommandDispatcher(private var commands: Map<Char, BrainFuckCommand> = HashMap()) {
+
     private val errorCommand: BrainFuckCommand = ErrorCommand()
 
     init {
@@ -26,7 +27,5 @@ class BrainFuckCommandDispatcher(private var commands: Map<Char, BrainFuckComman
                 Pair(Commands.INPUT, InputCommand()))
     }
 
-    infix fun receive(command: Char): BrainFuckCommand {
-        return commands.getOrDefault(command, errorCommand)
-    }
+    infix fun receive(command: Char): BrainFuckCommand = commands.getOrDefault(command, errorCommand)
 }
